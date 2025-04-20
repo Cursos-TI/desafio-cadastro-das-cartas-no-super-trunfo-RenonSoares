@@ -10,14 +10,16 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
-    char estado_1[5], estado_2[5];// estado de A a H
-    char codigo_1[10], codigo_2[10];// código será letra do estado seguido de nro 01 a 04
+    char estado_1[10], estado_2[10];// estado de A a H
+    char codigo_1[10], codigo_2[10];// código será letra do estado seguido de nº 01 a 04
     char cidade_1[50], cidade_2[50];
     int populacao_1, populacao_2;
     int p_turisticos_1, p_turisticos_2;
     float area_1, area_2;
     float pib_1, pib_2;
-    
+    float densidade_1, densidade_2;
+    float pib_pc_1, pib_pc_2;
+
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
@@ -48,6 +50,10 @@ int main() {
     printf("Nº de Pontos Turisticos:\n");
     scanf("%d", &p_turisticos_1);
 
+    //calculos jogador 01
+    densidade_1 = populacao_1 / area_1;//calculo da densidade populacional: populacao dividido por area
+    pib_pc_1 = pib_1 / populacao_1;//calculo pib per capita: pib dividido por area
+
     printf("---------------------------------------------\n");//mensagem ao jogador 01 que todos os itens foram cadastrados com sucesso
     printf("|Jogador 01|\nCarta 01 Cadastrada com Sucesso!\n");
     printf("---------------------------------------------\n\n");
@@ -75,6 +81,10 @@ int main() {
     printf("Nº de Pontos Turisticos:\n");
     scanf("%d", &p_turisticos_2);
 
+    //calculos jogador 02
+    densidade_2 = populacao_2 / area_2;//calculo da densidade populacional: populacao dividido por area
+    pib_pc_2 = pib_2 / populacao_2;//calculo pib per capita: pib dividido por area
+
     printf("---------------------------------------------\n");//mensagem ao jogador 02 que todos os itens foram cadastrados com sucesso
     printf("|Jogador 02|\nCarta 01 Cadastrada com Sucesso!\n");
     printf("---------------------------------------------\n\n");
@@ -89,8 +99,11 @@ int main() {
     printf("Nome da Cidade: %s\n", cidade_1);
     printf("População: %d habitantes\n", populacao_1);
     printf("Área: %.2f km²\n", area_1);
-    printf("PIB: %.2f bilhões de reais\n", pib_1),
-    printf("Número de Pontos Turísticos: %d\n\n", p_turisticos_1);
+    printf("PIB: %.2f bilhões de reais\n", pib_1);
+    printf("Número de Pontos Turísticos: %d\n", p_turisticos_1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade_1);
+    printf("PIB per Capita: %.2f reais\n\n", pib_pc_1);
+
 
     printf("|Jogador 02|\nCarta 01\n");//exibe carta 01 do jogador 02
     printf("Estado: %s\n", estado_2);
@@ -98,8 +111,11 @@ int main() {
     printf("Nome da Cidade: %s\n", cidade_2);
     printf("População: %d habitantes\n", populacao_2);
     printf("Área: %.2f km²\n", area_2);
-    printf("PIB: %.2f bilhões de reais\n", pib_2),
-    printf("Número de Pontos Turísticos: %d\n\n", p_turisticos_2);
+    printf("PIB: %.2f bilhões de reais\n", pib_2);
+    printf("Número de Pontos Turísticos: %d\n", p_turisticos_2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade_2);
+    printf("PIB per Capita: %.2f reais\n\n", pib_pc_2);
+
 
     return 0;//fim do codigo
 
